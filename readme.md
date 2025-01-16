@@ -9,27 +9,33 @@ Optional:
 - PyTorch (with CUDA support)
 - A compatible GPU with CUDA support
 
-### Installation
+## Installation
 1. **Clone the repository**:
- 
+    ```bash
+    git clone git@github.com:nohope-n3/CamJPLocalHost.git
+
 2. Create and activate a virtual environment (optional but recommended):
+    ```bash
     python3 -m venv venv
     source venv/bin/activate  # On Linux/macOS
     venv\Scripts\activate     # On Windows
 
 3. Install dependencies:
+    ```bash
     pip3 install -r requirements.txt --index-url https://download.pytorch.org/whl/cu124
 
 4. Install Nmap:
-    For Ubuntu/Debian:
+    - For Ubuntu/Debian:
+        ```bash
         sudo apt update
         sudo apt install nmap
-    For Windows:
+    - For Windows:
+
         Run nmap_setup.exe file
 
 
-### Setup
+## Setup
 Before running the code, ensure you have the following:
-    VPS IP and port: The IP address and port of the server that will receive the video stream.
-    Camera credentials: The username and password for the Hikvision camera(s) you're streaming from.
-    Network range: The local network range (the script automatically detects this from your host machine).
+- VPS IP and port: The IP address and port of the server that will receive the video stream.
+- Camera credentials: The username and password for the Hikvision camera(s) you're streaming from.
+- Network range: The local network range (the script automatically detects this from your host machine).
