@@ -119,12 +119,13 @@ def stream_single_camera(ip_address, vps_ip, vps_port, cam_user, cam_password, r
         logging.error(f"Failed to connect to the camera at {ip_address}.")
         return
 
-    client_socket = None
+
+
     try:
         # Create socket connection once here
         client_socket = create_socket(vps_ip, vps_port)
         if not client_socket:
-             logging.error(f"Connection failed for camera at {ip_address}, skipping stream.")
+             logging.error(f"Connection failed at {vps_ip}, skipping stream.")
              return
         logging.info(f"Connected to server, starting video stream for camera at {ip_address}.")
         
