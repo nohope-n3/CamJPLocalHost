@@ -2,6 +2,7 @@ import socket
 import subprocess
 import logging
 import shutil
+import os
 
 
 def get_host_IP():
@@ -43,10 +44,14 @@ def get_list_camera_IP(network_range, filter_devices, nmap_retries=3):
         logging.error("nmap is not installed or not in PATH.")
         return []
 
+    nmap_command = f"nmap -sn {network_range}"
+    if os.name == 'posix':
+        nmap_command = "sudo " + nmap_command
+
     for attempt in range(nmap_retries):
         print(
             f"Scanning network: {network_range} (Attempt {attempt+1}/{nmap_retries})")
-        nmap_command = f"nmap -sn {network_range}"
+
         try:
             result = subprocess.run(nmap_command, shell=True,
                                     capture_output=True, text=True, check=True)
