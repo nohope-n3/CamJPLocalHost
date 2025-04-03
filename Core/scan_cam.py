@@ -27,7 +27,7 @@ def convert_to_CIDR(host_ip):
     return cidr
 
 
-def get_list_camera_IP(network_range, filter_devices=["Hikvision"], nmap_retries=3):
+def get_list_camera_IP(network_range, filter_devices, nmap_retries=3):
     """
     Scans the network for camera IPs using nmap, with retries.
 
